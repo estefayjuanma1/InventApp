@@ -1,140 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    android:background="@color/lightgray">
 
-    <EditText
-        android:id="@+id/et_nombre"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/digite_el_nombre"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".RegisterActivity">
 
-    <EditText
-        android:id="@+id/et_telefono"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="@string/digite_su_telefono"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/et_correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="@string/digite_su_corrreo_electronico"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/et_contra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="@string/digite_una_contrasena"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/et_repcontra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:hint="@string/confirmar_contrasena"
-        android:textSize="16sp" />
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
+        <EditText
+            android:id="@+id/et_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/masculino"
-            android:id="@+id/rb_masculino"
-            android:checked="true"/>
-        <RadioButton
+            android:layout_margin="5dp"
+            android:hint="@string/digite_el_nombre"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/femenino"
-            android:id="@+id/rb_femenino"/>
-    </RadioGroup>
+            android:layout_margin="5dp"
+            android:hint="@string/digite_su_telefono"
+            android:inputType="number"
+            android:textSize="16sp" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="@string/digite_su_corrreo_electronico"
+            android:inputType="textWebEmailAddress"
+            android:textSize="16sp" />
 
-        <TableRow
+        <EditText
+            android:id="@+id/et_contra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="@string/digite_una_contrasena"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_repcontra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="@string/confirmar_contrasena"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/genero"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_masculino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/masculino" />
+
+            <RadioButton
+                android:id="@+id/rb_femenino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/femenino" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/hobbies"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_cine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cine" />
+
+                <CheckBox
+                    android:id="@+id/cb_gimnasio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/gym" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_leer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lectura" />
+
+                <CheckBox
+                    android:id="@+id/cb_series"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/series" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/bt_showPicker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cine"
-            android:id="@+id/cb_cine"/>
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:text="@string/nacimiento"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/gym"
-                android:id="@+id/cb_gimnasio"/>
+        <TextView
+            android:id="@+id/tv_ciudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/lugar_de_nacimiento"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
-        </TableRow>
-
-
-        <TableRow
+        <Spinner
+            android:id="@+id/sp_ciudad"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:entries="@array/Ciudades" />
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/lectura"
-                android:id="@+id/cb_leer"/>
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/series"
-                android:id="@+id/cb_series"/>
+        <Button
+            android:id="@+id/bt_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/registrarse" />
 
-        </TableRow>
-
-
-    </TableLayout>
-
-
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:text="@string/confirmar_registro"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nacimiento"
-        android:id="@+id/bt_showPicker"/>
-
-    <Button
-        android:id="@+id/bt_registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/registrarse" />
+        <TextView
+            android:id="@+id/tv_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="@string/mostrar_resultado"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp" />
 
 
-</LinearLayout>
-
+    </LinearLayout>
+</ScrollView>

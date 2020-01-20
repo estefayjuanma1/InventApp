@@ -17,11 +17,24 @@
     <string name="cine">Cine</string>
     <string name="Ginmasio">gimnasio</string>
     <string name="Lectura">lectura</string>
-    <string name="VerSeries">series</string>
+    <string name="VerSeries">Series</string>
     <string name="series">Ver Series</string>
     <string name="lectura">Lectura</string>
     <string name="gym">Gimnasio</string>
     <string name="Nombre_lb">Nombre:</string>
     <string name="Calendario">pick_date</string>
     <string name="nacimiento">Fecha de nacimiento</string>
+    <string name="genero">Género</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="lugar_de_nacimiento">Lugar de nacimiento</string>
+    <string name="mostrar_resultado">Mostrar resultados</string>
+
+    <string-array name="Ciudades">
+            <item>Medellín</item>
+            <item>Bogotá</item>
+            <item>Cali</item>
+            <item>Barranquilla</item>
+
+        </string-array>
+
 </resources>

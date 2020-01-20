@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import android.widget.Toast
 import com.estefayjuanma.inventapp.utils.Constantes.Companion.EMPTY
@@ -51,6 +52,11 @@ class RegisterActivity : AppCompatActivity() {
 
         }
 
+        val adapter = ArrayAdapter.createFromResource(this, R.array.Ciudades,
+            android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        sp_ciudad.adapter = adapter
+
         bt_showPicker.setOnClickListener {
             DatePickerDialog(this,
                 dataSetListener,
@@ -81,13 +87,22 @@ class RegisterActivity : AppCompatActivity() {
             /*   if (rb_masculino.isChecked) sexo= "Masculino"
                else sexo= "Femenino" */
 
-            if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty() || contra.isEmpty() || concontra.isEmpty()) {
-                Toast.makeText(this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                tv_resultado.text =
-                    getString(R.string.Nombre_lb) + SPACE + nombre + interlineado + "Correo: " + correo +
-                            "\nTelefono: " + telefono + "\nContraseña" + contra + "\nSexo: " + sexo +
-                            "\nPasatiempos: " + pasatiempos +  "\n:Fecha" + fecha
+
+
+            if(contra!=concontra){
+                Toast.makeText(this, "Las contraseñas deben ser iguales", Toast.LENGTH_SHORT).show()
+            }else{
+
+
+                if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty() || contra.isEmpty() || concontra.isEmpty()) {
+                    Toast.makeText(this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
+
+                } else {
+                    tv_resultado.text =
+                        getString(R.string.Nombre_lb) + SPACE + nombre + interlineado + "Correo: " + correo +
+                                "\nTelefono: " + telefono + "\nContraseña" + contra + "\nSexo: " + sexo +
+                                "\nPasatiempos: " + pasatiempos + "\nFecha:" + fecha + "\nCiudad de nacimiento: " + sp_ciudad.selectedItem.toString()
+                }
             }
         }
     }
